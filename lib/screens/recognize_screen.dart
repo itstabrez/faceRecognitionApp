@@ -12,11 +12,18 @@ class RecognitionScreen extends StatefulWidget {
 }
 
 class _RecognitionScreenState extends State<RecognitionScreen> {
+  late ImagePicker imagePicker;
+  @override
+  void initState() {
+    super.initState();
+    imagePicker = ImagePicker();
+  }
+
   File? _image;
-  final ImagePicker picker = ImagePicker();
 
   captureImage() async {
-    final XFile? image = await picker.pickImage(source: ImageSource.camera);
+    final XFile? image =
+        await imagePicker.pickImage(source: ImageSource.camera);
     if (image != null) {
       setState(() {
         _image = File(image.path);
@@ -25,7 +32,8 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
   }
 
   selectImage() async {
-    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    final XFile? image =
+        await imagePicker.pickImage(source: ImageSource.gallery);
     if (image != null) {
       setState(() {
         _image = File(image.path);
