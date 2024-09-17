@@ -25,6 +25,10 @@ class DatabaseHelper {
     );
   }
 
+  Future<int> deleteAllRows() async {
+    return await _db.delete(table);
+  }
+
   // SQL code to create the database table
   Future _onCreate(Database db, int version) async {
     await db.execute('''
