@@ -23,7 +23,7 @@ class RecognizedFacePainter extends CustomPainter {
       canvas.drawRect(face.location, p);
       TextSpan textSpan = TextSpan(
           text: face.name,
-          style: const TextStyle(fontSize: 20, color: Colors.white));
+          style: const TextStyle(fontSize: 30, color: Colors.white));
       TextPainter tp =
           TextPainter(text: textSpan, textDirection: TextDirection.ltr);
       tp.layout();
