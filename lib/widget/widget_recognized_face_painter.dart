@@ -22,8 +22,13 @@ class RecognizedFacePainter extends CustomPainter {
     for (Recognition face in facesList) {
       canvas.drawRect(face.location, p);
       TextSpan textSpan = TextSpan(
-          text: face.name,
-          style: const TextStyle(fontSize: 30, color: Colors.white));
+        text: face.name,
+        style: const TextStyle(
+          fontSize: 40,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      );
       TextPainter tp =
           TextPainter(text: textSpan, textDirection: TextDirection.ltr);
       tp.layout();

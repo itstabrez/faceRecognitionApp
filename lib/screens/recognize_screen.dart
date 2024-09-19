@@ -103,11 +103,9 @@ class _RecognitionScreenState extends State<RecognitionScreen> {
       Recognition recognition = recognizer.recognize(croppedFace, boundingBox);
       print("Recognized Faces = ${recognition.name}");
       recognitions.add(recognition);
-      if (recognition.distance > 1.25) {
+      if (recognition.distance > 1.00) {
         recognition.name = 'Unknown';
       }
-      // showFaceRegistrationDialogue(
-      //     Uint8List.fromList(img.encodeBmp(croppedFace)), recognition);
     }
     drawRectangleAroundFaces();
   }
